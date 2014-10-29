@@ -70,18 +70,19 @@ end
 
 # # Person 3
 # def my_array_sorting_method(source)
-#   # Your code here!
+puts source.partition{|x| x.is_a? Integer}.map(&:sort).flatten
 # end
 
 # def my_hash_sorting_method(source)
-#   # Your code here!
+puts source.sort_by {|k,v| v}
 # end
 
 # # Identify and describe the Ruby method you implemented.
-# #
-# #
-# #
+=begin
+For the array sorter, it checks the array for integers and returns a separate array for it. All non integers are then put in a separate array and both these arrays are placed into a single array. The map method then applies the sort within each of these 2 arrays. The final flatten then places each of the items in these arrays into a single large array. If we weanted the strings to be listed first in the array, we would modify the method to check for "x.is_a? String"" instead.
 
+The hash sorter is a lot more simple and can be done in one enumerable. You follow the syntax where the first item k represents the key and the second item v represents the value.
+=end
 
 # # Person 4
 # def my_array_deletion_method(source, thing_to_delete)
