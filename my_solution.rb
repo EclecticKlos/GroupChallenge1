@@ -7,6 +7,11 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
 #********************************* ARRAY FINDING METHOD *********************************
 
 # Person 1's solution
+#pseudocode
+#Iterates through array (source argument) via indices for match to thing_to_find argument.
+#If matched, assigns String from source array to new output_array.
+#Returns output_array.
+
 def my_array_finding_method(source, thing_to_find)
   i = 0
   t = 0
@@ -23,9 +28,9 @@ end
 
 #********************************* HASH FINDING METHOD *********************************
 #pseudocode
-#Iterates over hash for value match
-#Places keys of matching values in an array
-#Returns array
+#Iterates over hash values for a match to thing_to_find argument.
+#Places keys of matching values in an array.
+#Returns array.
 
 
 def my_hash_finding_method(source, thing_to_find)
