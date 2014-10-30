@@ -85,18 +85,24 @@ The hash sorter is a lot more simple and can be done in one enumerable. You foll
 =end
 
 # # Person 4
-# def my_array_deletion_method(source, thing_to_delete)
-#   #Your code here!
-# end
+def my_array_deletion_method(array, letter)
+  array.delete_if { |data| !data.match(letter)}
+  return array
+ end
 
-# def my_hash_deletion_method(source, thing_to_delete)
-#   #Your code here!
-# end
+def my_hash_deletion_method(hash, letter)
+  hash.delete_if {|key,value| key >= "letter"}
+  return hash
+end
+
 
 # # Identify and describe the Ruby method you implemented.
-# #
-# #
-# #
+# The array deletion method checks for the "letter" and deletes all strings including it.
+# then it returns the array without the letter.
+
+#The hash deletion method also checks for the "letter" and deletes it if the letter is included.
+#It then returns the hash without the letter.
+
 
 
 # ################## DRIVER TEST CODE ###################################
