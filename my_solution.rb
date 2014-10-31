@@ -72,7 +72,7 @@ end
 #1) Use the each to iterate over the hash and pass the code block the key and the value of each pair.
 #2) Set the value of each value equal to the original value plus the parameter thing_to_find
 
-def my_hash_finding_method(source, thing_to_find)
+def my_hash_modification_method(source, thing_to_find)
   source.each{|key, value|
     source[key] = value + thing_to_find
   }
@@ -85,13 +85,13 @@ end
 
 
 # # Person 3
-# def my_array_sorting_method(source)
+def my_array_sorting_method(source)
 puts source.partition{|x| x.is_a? Integer}.map(&:sort).flatten
-# end
+end
 
-# def my_hash_sorting_method(source)
+def my_hash_sorting_method(source)
 puts source.sort_by {|k,v| v}
-# end
+end
 
 # # Identify and describe the Ruby method you implemented.
 =begin
@@ -130,8 +130,8 @@ end
  p my_hash_finding_method(my_family_pets_ages, 3) == ["Hoobie", "Ditto"]
 
 # # Person 2
-# p my_array_modification_method(i_want_pets, 1) == ["I", "want", 4, "pets", "but", "only", "have", 3 ]
-# p my_hash_modification_method(my_family_pets_ages, 2) == {"Evi" => 8, "Hoobie" => 5, "George" => 14, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
+p my_array_modification_method(i_want_pets, 1) == ["I", "want", 4, "pets", "but", "only", "have", 3 ]
+p my_hash_modification_method(my_family_pets_ages, 2) == {"Evi" => 8, "Hoobie" => 5, "George" => 14, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 # # Person 3
 # # This driver code will only pass if you have the code from Person 2! If you don't have it, copy/modify it so you can
