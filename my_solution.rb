@@ -53,17 +53,33 @@ end
 # #
 # #
 
-# # Person 2
-# def my_array_modification_method(source, thing_to_modify)
-#   # Your code here!
-# end
+# Person 2
 
-# def my_hash_modification_method(source, thing_to_modify)
-#   # Your code here!
-# end
+# Psudocode:
+#1) Use the each_with_index to iterate over the array and pass the code block the element and the index.
+#2) Check if each element is an integer
+#3) If an element is an integer set the value of the element equal to the original value plus the parameter thing_to_find
+
+def my_array_modification_method(source, thing_to_find)
+  source.each_with_index {|elem, index|
+    if elem.is_a?(Integer)
+      source[index] = (elem + thing_to_find)
+    end
+  }
+end
+
+# Psudocode:
+#1) Use the each to iterate over the hash and pass the code block the key and the value of each pair.
+#2) Set the value of each value equal to the original value plus the parameter thing_to_find
+
+def my_hash_finding_method(source, thing_to_find)
+  source.each{|key, value|
+    source[key] = value + thing_to_find
+  }
+end
 
 # # Identify and describe the Ruby method you implemented.
-# #
+# I used the .each and .each with index methods respectively.  The .each_with_index goes through the array and passes the element and the element's index to the code block for each element in the array.  So in this case it goes through each element, checks to see if that element is an integer, and if it is replaces the element with the element's value + the number that you want to add (represented by the thing_to_find parameter).  For the my_hash_finding_method I used the .each method which goes through the hash (or array) and passes in both the key and the value to the code block.  In this case I then replaced each value with value + what you want to add (represented by the thing_to_find parameter).
 # #
 # #
 
