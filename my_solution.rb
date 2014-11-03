@@ -86,12 +86,15 @@ end
 
 # # Person 3
 def my_array_sorting_method(source)
-puts source.partition{|x| x.is_a? Integer}.map(&:sort).flatten
+return source.partition{|x| x.is_a? Integer}.map(&:sort).flatten
 end
 
 def my_hash_sorting_method(source)
-puts source.sort_by {|k,v| v}
+return source.sort_by {|k,v| v}
 end
+
+#p my_array_sorting_method(i_want_pets)
+p my_hash_sorting_method(my_family_pets_ages)
 
 # # Identify and describe the Ruby method you implemented.
 =begin
@@ -141,8 +144,8 @@ p my_hash_modification_method(my_family_pets_ages, 2) == {"Evi" => 8, "Hoobie" =
 # # You don't have to do this in the exact same way, just make sure to write your own
 # # test if you are going to do it differently and give that to your group.
 
-# p my_array_sorting_method(i_want_pets) == ["3", "4", "I", "but", "have", "only", "pets", "want"]
-# p my_hash_sorting_method(my_family_pets_ages) == [["Annabelle", 2], ["Ditto", 5], ["Hoobie", 5], ["Bogart", 6], ["Poly", 6], ["Evi", 8], ["George", 14]]
+ p my_array_sorting_method(i_want_pets) == [3, 4, "I", "but", "have", "only", "pets", "want"]
+ p my_hash_sorting_method(my_family_pets_ages) == [["Annabelle", 0], ["Ditto", 3], ["Hoobie", 3], ["Poly", 4], ["Bogart", 4], ["Evi", 6], ["George", 12]]
 
 # # Person 4
 # # This driver code will only pass if you have the code from Person 2!If you don't have it, copy/modify it so you can
