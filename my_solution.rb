@@ -86,15 +86,16 @@ end
 
 # # Person 3
 def my_array_sorting_method(source)
-return source.partition{|x| x.is_a? Integer}.map(&:sort).flatten
+  return source.partition{|x| x.is_a? Integer}.map(&:sort).flatten
 end
 
 def my_hash_sorting_method(source)
-return source.sort_by {|k,v| v}
+  return source.sort_by {|k,v| [-v,k]}
 end
+p my_array_sorting_method(my_family_pets_ages)
 
 #p my_array_sorting_method(i_want_pets)
-p my_hash_sorting_method(my_family_pets_ages)
+# p my_hash_sorting_method(my_family_pets_ages)
 
 # # Identify and describe the Ruby method you implemented.
 =begin
@@ -105,15 +106,15 @@ The hash sorter is a lot more simple and can be done in one enumerable. You foll
 
 # # Person 4
 def my_array_deletion_method(array, letter)
-  array.delete_if { |data| !data.match(letter)}
+  array.delete_if { |data| data.to_s.match(letter.to_s)}
   return array
  end
 
 def my_hash_deletion_method(hash, letter)
-  hash.delete_if {|key,value| key >= "letter"}
+  hash.delete_if {|key,value| key == letter}
   return hash
 end
-
+# puts my_hash_deletion_method(my_family_pets_ages)
 
 # # Identify and describe the Ruby method you implemented.
 # The array deletion method checks for the "letter" and deletes all strings including it.
@@ -151,8 +152,8 @@ p my_hash_modification_method(my_family_pets_ages, 2) == {"Evi" => 8, "Hoobie" =
 # # This driver code will only pass if you have the code from Person 2!If you don't have it, copy/modify it so you can
 # # test whether your method works.
 # # This may be false depending on how your method deals with ordering the animals with the same ages.
-# p my_array_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "only", 3 ]
-# p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
+ p my_array_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "only", 3 ]
+ p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 
 
